@@ -4,8 +4,11 @@
 ## React Client Application Routes
 
 Route `/`: Instructions page. Explains the four game phases (Setup → Planning → Execution → Result). Visible to everyone, including anonymous visitors — never shows the network map.
+
 Route `/login`: Sign-in form (plus an optional sign-up / forgot-password flow, not required by the spec). Redirects to /game if already logged in.
+
 Route `/game`: The full game flow. Setup, Planning, Execution and Result are all rendered from this single route, switching phase internally based on game state. Protected — anonymous users are redirected to /login.
+
 Route `/ranking`: Leaderboard with the best score of every registered user who has completed at least one game. Protected — anonymous users are redirected to /login.
 
 
@@ -64,33 +67,47 @@ Response body: { message } — the same generic confirmation regardless of wheth
 ## Database Tables
 
 -Table lines - the metro lines (id, name, color). Seeded with 4 lines.
+
 -Table stations - the metro stations (id, name). Seeded with 17 stations.
+
 -Table line_stations - join table linking each station to the line(s) it belongs to, with a position column that encodes order along the line. Adjacency (which stations are connected) and interchange status (a station on more than one line) are both derived from this table.
+
 -Table events - random events applicable to a segment (description, effect from -4 to +4). Seeded with 10 events.
+
 -Table users - registered users (username, email, salted+hashed password via PBKDF2). Seeded with 3 users.
+
 -Table games - one row per game session: assigned start_id/dest_id, status (active/completed/failed), final_score.
+
 -Table game_segments - one row per executed step of a finished game: the segment walked, the event drawn, and the running coin total after that step.
 
 ## Main React Components
 
 -App (App.jsx): root component, routing and route protection.
+
 -Navbar (Navbar.jsx): top nav bar, login-state aware.
+
 -AuthProvider (AuthContext.jsx): global auth state via Context.
+
 -NetworkMap (NetworkMap.jsx): SVG map; showLines toggles lines on/off.
+
 -GamePage (GamePage.jsx): orchestrates phases, timer, route state.
+
 -Setup, Planning, Execution, Result (phases/*.jsx): the 4 phases.
+
 -RankingPage (RankingPage.jsx): leaderboard table.
 
 ## Screenshot
 
-![Screenshot](C:\Users\Nithya\Desktop\Last_race\exam-1-last-race-nithyak-coder\screenshot\planning_phase.png)
+![Screenshot](./screenshot/planning_phase.png)
 
-![Screenshot](C:\Users\Nithya\Desktop\Last_race\exam-1-last-race-nithyak-coder\screenshot\ranking.png)
+![Screenshot](./screenshot/ranking.png)
 
 ## Users Credentials
 
 nithya, nithya123 (has completed games, appears in ranking)
+
 aishu, aishu123 (has completed games, appears in ranking)
+
 abinaya, abinaya123 (registered, no games played yet)
 
 ## Use of AI Tools
