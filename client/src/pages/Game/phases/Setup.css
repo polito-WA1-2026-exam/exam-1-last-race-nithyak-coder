@@ -1,0 +1,5 @@
+.setup-page    { padding: 24px; }
+.setup-wrap    { max-width: 640px; margin: 0 auto; }
+.setup-title   { font-size: 22px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+.setup-desc    { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+.setup-actions { display: flex; justify-content: flex-end; margin-top: 14px; }

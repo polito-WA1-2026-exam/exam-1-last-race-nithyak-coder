@@ -1,0 +1,143 @@
+.execution-page  { padding: 24px; }
+.execution-wrap  { max-width: 480px; margin: 0 auto; }
+
+.execution-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.execution-title  { font-size: 22px; font-weight: 700; margin: 0; color: #fff; }
+
+.execution-steps  { display: flex; flex-direction: column; gap: 8px; }
+
+.exec-step {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.06);
+  transition: all 0.2s;
+}
+
+.exec-step-active {
+  border-color: #D83B2E;
+  box-shadow: 0 0 0 3px rgba(216, 59, 46, 0.15);
+}
+
+.exec-step-done   { opacity: 0.5; }
+
+.exec-step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.exec-step-route  { font-size: 13px; font-weight: 600; color: #fff; }
+.exec-step-desc   { font-size: 12px; color: rgba(255,255,255,0.6); margin-bottom: 4px; }
+.exec-step-coins  { font-size: 11px; color: rgba(255,255,255,0.45); }
+
+.execution-next   { margin-top: 14px; }
+
+/* ── Track with stops ──────────────────────────────────────────────────
+   Pure CSS, no animation/transition that could cause overlapping motion.
+   Each stop is positioned with `left: X%` (set inline from JS as a fixed
+   percentage per stop — never animated), so dots stay fixed in place.
+   Labels alternate above/below the track (set via a class from JS) so
+   adjacent labels on longer routes never compete for the same horizontal
+   band — this guarantees no label-to-label overlap regardless of how
+   many stops a route has. The train icon sits in its own dedicated row
+   beneath everything, horizontally centered on whichever stop is
+   current, so it never overlaps a label in either position. */
+
+.track-card {
+  margin-bottom: 24px;
+  padding: 46px 18px 72px;
+  overflow: visible;
+}
+
+.track-stage {
+  position: relative;
+  height: 4px;
+  margin: 0 10px;
+}
+
+.track-base {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.15);
+}
+
+.track-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #EF9F27 0%, #FAC775 100%);
+}
+
+.track-stop {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.stop-dot {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #161b2e;
+  border: 2px solid rgba(255,255,255,0.3);
+  display: block;
+}
+
+.track-stop-reached .stop-dot {
+  background: #EF9F27;
+  border-color: #FAC775;
+}
+
+/* Label above the track */
+.stop-label {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
+  max-width: 64px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Label below the track — used on alternating stops so neighbouring
+   labels never sit on the same horizontal band. */
+.stop-label-below {
+  bottom: auto;
+  top: 16px;
+}
+
+.stop-label-reached {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Train sits in its own row, well clear of both label positions. */
+.track-train {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 1;
+  display: flex;
+}

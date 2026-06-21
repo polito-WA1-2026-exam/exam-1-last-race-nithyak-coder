@@ -1,111 +1,117 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #eef0f5;
+  font-size: 14px;
+  line-height: 1.6;
+
+  /* "Metro night" backdrop: deep navy base with soft glowing color orbs
+     using the SAME 4 colors as the navbar logo dots (red/blue/green/
+     yellow), plus faint star dots, fixed so it stays calm while
+     scrolling. Applies to every page since individual page wrappers no
+     longer set their own background. */
+  background-color: #161b2e;
+  background-image:
+    radial-gradient(circle at 6% 10%,   rgba(226,75,74,0.22)  0%, transparent 30%),
+    radial-gradient(circle at 92% 6%,   rgba(55,138,221,0.18) 0%, transparent 30%),
+    radial-gradient(circle at 88% 92%,  rgba(99,200,90,0.18)  0%, transparent 32%),
+    radial-gradient(circle at 8% 90%,   rgba(239,159,39,0.20) 0%, transparent 32%),
+    radial-gradient(1.5px 1.5px at 10% 8%,  rgba(255,255,255,0.5) 100%, transparent),
+    radial-gradient(1px   1px   at 30% 15%, rgba(255,255,255,0.35) 100%, transparent),
+    radial-gradient(1.5px 1.5px at 70% 10%, rgba(255,255,255,0.45) 100%, transparent),
+    radial-gradient(1px   1px   at 90% 20%, rgba(255,255,255,0.3) 100%, transparent),
+    radial-gradient(1px   1px   at 20% 70%, rgba(255,255,255,0.3) 100%, transparent),
+    radial-gradient(1.5px 1.5px at 85% 75%, rgba(255,255,255,0.4) 100%, transparent);
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  min-height: 100vh;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+button { cursor: pointer; font-family: inherit; font-size: 13px; }
+input  { font-family: inherit; font-size: 13px; }
+
+/* ── Shared utility classes used across all pages ── */
+
+.card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
+.btn {
   display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: #eef0f5;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.btn:hover { background: rgba(255,255,255,0.12); }
+
+.btn-primary {
+  background: linear-gradient(135deg, #E8453A 0%, #D83B2E 60%, #B82E22 100%);
+  border-color: transparent;
+  color: white;
+  box-shadow: 0 2px 10px rgba(216,59,46,0.35);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #F0534A 0%, #E8453A 60%, #C73A2D 100%);
+  box-shadow: 0 4px 12px rgba(216,59,46,0.45);
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.btn-full { width: 100%; justify-content: center; }
+
+.muted      { color: rgba(255,255,255,0.5); }
+.error-msg  { color: #F09595; font-size: 12px; margin-top: 6px; }
+
+.phase-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(216,59,46,0.18);
+  color: #F09595;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 10px;
 }
+
+.coins-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: rgba(239,159,39,0.16);
+  color: #FAC775;
+  border: 1px solid rgba(239,159,39,0.3);
+}
+
+.event-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.event-pos { background: rgba(99,200,90,0.16);  color: #97D87E; border: 1px solid rgba(99,200,90,0.3); }
+.event-neg { background: rgba(226,75,74,0.16);  color: #F09595; border: 1px solid rgba(226,75,74,0.3); }
+.event-neu { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.15); }
+

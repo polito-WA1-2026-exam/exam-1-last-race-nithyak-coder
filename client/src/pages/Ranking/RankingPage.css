@@ -1,0 +1,94 @@
+.ranking-page    { padding: 36px 24px; }
+.ranking-wrap    { max-width: 480px; margin: 0 auto; }
+
+.ranking-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.ranking-sub     { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 22px; }
+.ranking-card    { padding: 0; overflow: hidden; }
+
+.ranking-header-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  gap: 14px;
+}
+
+.ranking-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  border-left: 3px solid transparent;
+  font-size: 13px;
+  color: #eef0f5;
+  gap: 14px;
+  transition: background 0.15s;
+}
+
+.ranking-row:hover { background: rgba(255,255,255,0.03); }
+.ranking-row:last-child { border-bottom: none; }
+
+.ranking-col-pos   { width: 32px; font-size: 17px; text-align: center; }
+.ranking-col-name  { flex: 1; font-weight: 500; }
+.ranking-col-score { font-weight: 700; font-size: 15px; }
+.ranking-coins-label { font-size: 11px; color: rgba(255,255,255,0.45); font-weight: 400; margin-left: 3px; }
+
+/* Top-3 accents — subtle left border + score color tint */
+.rank-gold   { border-left-color: #EF9F27; }
+.rank-gold   .ranking-col-score { color: #FAC775; }
+
+.rank-silver { border-left-color: rgba(255,255,255,0.45); }
+.rank-silver .ranking-col-score { color: rgba(255,255,255,0.9); }
+
+.rank-bronze { border-left-color: #D85A30; }
+.rank-bronze .ranking-col-score { color: #F0997B; }
+
+.ranking-row-me {
+  background: rgba(239,159,39,0.10);
+}
+
+.ranking-row-me:hover { background: rgba(239,159,39,0.14); }
+
+.ranking-you-badge {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #E8453A 0%, #D83B2E 100%);
+  color: white;
+  border-radius: 20px;
+  padding: 2px 8px;
+  vertical-align: middle;
+}
+
+.ranking-guest-cta {
+  text-align: center;
+  padding: 22px 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.ranking-guest-cta p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+}
+
+.ranking-play-cta {
+  text-align: center;
+  padding: 22px 0 8px;
+}

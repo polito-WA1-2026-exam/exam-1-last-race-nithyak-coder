@@ -1,0 +1,162 @@
+.planning-page  { padding: 24px; }
+.planning-wrap  { max-width: 640px; margin: 0 auto; }
+
+.planning-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.planning-timer {
+  font-size: 15px;
+  font-weight: 700;
+  color: #F09595;
+}
+
+.timer-urgent {
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.timer-bar-wrap {
+  height: 5px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+
+.timer-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #E8453A 0%, #D83B2E 100%);
+  transition: width 1s linear;
+}
+
+.planning-stations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.planning-station-card  { padding: 12px; }
+.planning-station-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 3px; }
+.planning-station-name  { font-size: 15px; font-weight: 700; color: #fff; }
+
+.planning-map-card  { margin-bottom: 12px; }
+.planning-card-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 6px; }
+
+/* Route display */
+.planning-route {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  min-height: 38px;
+  padding: 8px;
+  border: 1px dashed rgba(255,255,255,0.25);
+  border-radius: 8px;
+  align-items: center;
+}
+
+.planning-route-item    { display: flex; align-items: center; gap: 4px; }
+.planning-route-station {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #eef0f5;
+}
+.planning-route-arrow   { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+/* Segments grid */
+.planning-segments {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.seg-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  background: rgba(255,255,255,0.05);
+  color: #eef0f5;
+  transition: all 0.1s;
+}
+
+.seg-item:hover:not(.seg-used):not(.seg-dim) {
+  border-color: #E8453A;
+  background: rgba(216,59,46,0.12);
+}
+
+.seg-used {
+  border-color: #D83B2E !important;
+  background: rgba(216,59,46,0.18) !important;
+  opacity: 0.55;
+  cursor: default;
+}
+
+.seg-dim  { opacity: 0.3; cursor: default; }
+
+.seg-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #D83B2E;
+  flex-shrink: 0;
+}
+
+.planning-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+/* Segment line indicator */
+.seg-line-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.seg-text {
+  flex: 1;
+}
+
+.seg-line-label {
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.seg-used-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  flex-shrink: 0;
+}
+
+.route-reached-msg {
+  font-size: 12px;
+  color: #97D87E;
+  background: rgba(99,200,90,0.14);
+  border: 1px solid rgba(99,200,90,0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 10px;
+}

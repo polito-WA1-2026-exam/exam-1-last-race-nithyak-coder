@@ -1,0 +1,218 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 56px;
+  background: rgba(22,27,46,0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar-dots-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.ndot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.ndot-red    { background: #E24B4A; }
+.ndot-blue   { background: #378ADD; }
+.ndot-green  { background: #63C85A; }
+.ndot-yellow { background: #EF9F27; }
+
+/* Centre links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.navbar-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.07);
+  transition: background 0.12s, color 0.12s;
+}
+
+.navbar-link:hover {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+}
+
+.navbar-link-active {
+  background: linear-gradient(135deg, #E8453A 0%, #D83B2E 60%, #B82E22 100%);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(216,59,46,0.35);
+}
+
+/* Auth area */
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.navbar-login-btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 20px;
+  text-decoration: none;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #E8453A 0%, #D83B2E 60%, #B82E22 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 2px 8px rgba(216,59,46,0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.navbar-login-btn:hover {
+  background: linear-gradient(135deg, #F0534A 0%, #E8453A 60%, #C73A2D 100%);
+  box-shadow: 0 4px 12px rgba(216,59,46,0.45);
+  transform: translateY(-1px);
+}
+
+/* Avatar button */
+.navbar-profile {
+  position: relative;
+}
+
+.navbar-avatar-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 22px;
+  padding: 5px 10px 5px 5px;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.navbar-avatar-btn:hover { background: rgba(255,255,255,0.08); }
+
+.navbar-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #D83B2E;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-username-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #eef0f5;
+}
+
+.navbar-caret {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  transition: transform 0.15s;
+  display: inline-block;
+}
+.navbar-caret.open { transform: rotate(180deg); }
+
+/* Dropdown */
+.navbar-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 210px;
+  background: #1d2338;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  overflow: hidden;
+  z-index: 300;
+}
+
+.dropdown-user-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+}
+
+.dropdown-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #D83B2E;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dropdown-username {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.dropdown-role {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 1px;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 2px 0;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 9px 16px;
+  font-size: 13px;
+  color: #eef0f5;
+  text-decoration: none;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.dropdown-item:hover { background: rgba(255,255,255,0.06); }
+
+.dropdown-logout {
+  color: #F09595;
+  font-weight: 500;
+}

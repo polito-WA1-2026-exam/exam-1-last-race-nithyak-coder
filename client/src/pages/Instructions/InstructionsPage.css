@@ -1,0 +1,191 @@
+.instructions-page {
+  padding: 40px 24px 64px;
+  min-height: calc(100vh - 56px);
+}
+
+.instructions-wrap {
+  max-width: 620px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Hero */
+.instructions-hero {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.instructions-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.instr-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dot-red    { background: #E24B4A; }
+.dot-blue   { background: #378ADD; }
+.dot-green  { background: #63C85A; }
+.dot-yellow { background: #EF9F27; }
+
+.instructions-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.instructions-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+
+/* Guest notice banner */
+.guest-notice {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(239,159,39,0.12);
+  border: 1px solid rgba(239,159,39,0.3);
+  border-radius: 12px;
+}
+
+.guest-notice-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+}
+
+.guest-notice-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #FAC775;
+  margin-bottom: 2px;
+}
+
+.guest-notice-desc {
+  font-size: 12px;
+  color: rgba(250,199,117,0.85);
+  line-height: 1.4;
+}
+
+.guest-notice-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+/* Steps card */
+.instructions-card {
+  padding: 24px;
+}
+
+.instructions-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.instructions-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.instructions-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.step-blue   { background: rgba(55,138,221,0.2); color: #85B7EB; }
+.step-orange { background: rgba(239,159,39,0.2); color: #FAC775; }
+.step-green  { background: rgba(99,200,90,0.2);  color: #97D87E; }
+.step-red    { background: rgba(226,75,74,0.2);  color: #F09595; }
+
+.step-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.step-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.55;
+}
+
+/* Tips card */
+.instructions-tips { padding: 24px; }
+
+.tips-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.tips-list li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.5;
+  padding-left: 18px;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #F09595;
+  font-weight: 700;
+}
+
+/* CTA */
+.instructions-cta {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.instructions-play-btn {
+  font-size: 14px;
+  padding: 11px 28px;
+  text-decoration: none;
+}
+
+.instructions-guest-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.instructions-guest-hint {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+}
