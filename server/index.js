@@ -5,7 +5,7 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { pbkdf2Sync, randomBytes } from 'node:crypto';
 import db from './db.js';
-import { Line, Station, Game, GameSegment } from './models.js';
+import { Line, Station, Game, GameSegment } from './model.js';
 
 const app  = express();
 const port = 3001;
